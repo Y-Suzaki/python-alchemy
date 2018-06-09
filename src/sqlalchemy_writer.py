@@ -8,7 +8,10 @@ class SqlAlchemyWriter:
             session.add(skill)
 
     def remove_skill(self, id):
-        pass
+        with SessionContext() as session:
+            target = session.query(Skill).get(id)
+            if target is not None:
+                session.delete(target)
 
     def update_skill(self):
         pass
@@ -23,4 +26,5 @@ class SqlAlchemyWriter:
         pass
 
 
+SqlAlchemyWriter().remove_skill(id='00001')
 SqlAlchemyWriter().add_skill(Skill(id='00001', name='python3'))
