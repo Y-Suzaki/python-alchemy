@@ -1,6 +1,3 @@
-import sys
-sys.path.append('../')
-
 from sqlalchemy_settings import Base
 from sqlalchemy import Column, Integer, String
 
