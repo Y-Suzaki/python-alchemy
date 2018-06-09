@@ -27,19 +27,3 @@ class SqlAlchemyWriter:
 
     def update_engnieer(self):
         pass
-
-
-# Skill Test
-SqlAlchemyWriter().remove_skill(id='00001')
-SqlAlchemyWriter().remove_skill(id='00002')
-SqlAlchemyWriter().remove_skill(id='00003')
-
-skill = SqlAlchemyWriter().add_skill(Skill(id='00001', name='python3'))
-skill = SqlAlchemyWriter().add_skill(Skill(id='00002', name='java'))
-skill = SqlAlchemyWriter().add_skill(Skill(id='00003', name='AWS'))
-
-SqlAlchemyWriter().update_skill(id='00001', name='python2')
-SqlAlchemyWriter().update_skill(id='00002', name='java1.8')
-
-
-# Engineer Test
