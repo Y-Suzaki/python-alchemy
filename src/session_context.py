@@ -5,7 +5,7 @@ from sqlalchemy_settings import ENGINE
 class SessionContext:
     def __init__(self):
         print('init')
-        session_maker = sessionmaker(bind=ENGINE)
+        session_maker = sessionmaker(bind=ENGINE, expire_on_commit=False)
         self.session = session_maker()
 
     def __enter__(self):

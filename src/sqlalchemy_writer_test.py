@@ -4,7 +4,7 @@ from model.skill import Skill
 
 
 class SqlAlchemyWriterTest(unittest.TestCase):
-    def test_all(self):
+    def test_skill_all(self):
         SqlAlchemyWriter().remove_skill(id='00001')
         SqlAlchemyWriter().remove_skill(id='00002')
         SqlAlchemyWriter().remove_skill(id='00003')
