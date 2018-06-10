@@ -3,18 +3,21 @@ from model.skill import Skill
 
 
 class SqlAlchemyWriter:
-    def add_skill(self, skill):
+    @staticmethod
+    def add_skill(skill):
         with SessionContext() as session:
             session.add(skill)
         return skill
 
-    def remove_skill(self, id):
+    @staticmethod
+    def remove_skill(id):
         with SessionContext() as session:
             target = session.query(Skill).get(id)
             if target is not None:
                 session.delete(target)
 
-    def update_skill(self, id, name):
+    @staticmethod
+    def update_skill(id, name):
         with SessionContext() as session:
             target = session.query(Skill).get(id)
             target.name = name

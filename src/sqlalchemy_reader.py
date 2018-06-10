@@ -3,26 +3,17 @@ from model.skill import Skill
 
 
 class SqlAlchemyReader:
-    def selectById(self, id):
+    @staticmethod
+    def get_skill_by_id(id):
         with SessionContext() as session:
             return session.query(Skill).get(id)
 
-    def selectAll(self, limit=10):
+    @staticmethod
+    def get_skill_all(limit=10):
         with SessionContext() as session:
             return session.query(Skill).limit(limit).all()
 
-    def selectByName(self, name):
+    @staticmethod
+    def get_skill_by_name(name):
         with SessionContext() as session:
             return session.query(Skill).filter(Skill.name == name).all()
-
-
-skill = SqlAlchemyReader().selectById('00001')
-print(skill)
-
-skills = SqlAlchemyReader().selectAll()
-for skill in skills:
-    print(skill)
-
-skills = SqlAlchemyReader().selectByName(name='AWS')
-for skill in skills:
-    print(skill)
