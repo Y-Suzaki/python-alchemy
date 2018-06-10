@@ -16,6 +16,12 @@ class SqlAlchemyReaderTest(unittest.TestCase):
         for skill in skills:
             print(skill)
 
+    def test_engineer_all(self):
+        engineer = SqlAlchemyReader.get_engineer_with_skill('00001')
+        print(engineer)
+        for engineer_skill in engineer.engineer_skill:
+            print(engineer_skill.skill.name)
+
 
 if __name__ == "__main__":
     unittest.main()
