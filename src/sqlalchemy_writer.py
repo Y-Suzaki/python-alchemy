@@ -1,5 +1,6 @@
 from session_context import SessionContext
 from model.skill import Skill
+from model.engineer import Engineer
 
 
 class SqlAlchemyWriter:
@@ -22,11 +23,22 @@ class SqlAlchemyWriter:
             target = session.query(Skill).get(id)
             target.name = name
 
-    def add_engineer(self):
-        pass
+    @staticmethod
+    def add_engineer(engineer):
+        with SessionContext() as session:
+            session.add(engineer)
+        return engineer
 
-    def remove_enginner(self):
-        pass
+    @staticmethod
+    def remove_engineer(id):
+        with SessionContext() as session:
+            target = session.query(Engineer).get(id)
+            if target is not None:
+                session.delete(target)
 
-    def update_engnieer(self):
-        pass
+    @staticmethod
+    def update_engineer(id, name, age):
+        with SessionContext() as session:
+            target = session.query(Engineer).get(id)
+            target.name = name
+            target.age = age
