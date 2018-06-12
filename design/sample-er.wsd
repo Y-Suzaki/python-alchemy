@@ -1,0 +1,23 @@
+@startuml ER
+package "Engineer Skill System" as target_system {
+    entity "engineer" {
+        + id [PK]
+        --
+        name
+        age
+        --
+    }
+    entity "engineer_skill" {
+        + engineer_id FK[]
+        + skill_id [FK]
+    }
+    entity "skill" {
+        + id [PK]
+        --
+        name
+        --
+    }
+    engineer ||-ri-o{ engineer_skill
+    skill ||-le-o{ engineer_skill
+}
+@enduml
