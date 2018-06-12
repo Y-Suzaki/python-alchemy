@@ -20,7 +20,7 @@
     ```
 ### 本サンプルで扱うER図   
 * https://github.com/Y-Suzaki/python-alchemy/blob/master/design/sample-er.wsd
-* ![ER図](https://github.com/Y-Suzaki/python-alchemy/blob/master/design/out/sample-er/ER.png)
+    ![ER図](https://github.com/Y-Suzaki/python-alchemy/blob/master/design/out/sample-er/ER.png)
 ### 実装手順
 ##### 共通設定
 * データベース設定の実装
@@ -55,6 +55,7 @@
     ```
 * 更新
     * Session上に管理されている必要があるため、一度データを取得する必要がある
+    * Session上のデータを更新しcommitすることで、DB側も更新される
     ``` java
     @staticmethod
     def update_skill(id, name):
@@ -126,3 +127,4 @@
 * Session破棄後、Lazy Fetchでデータ取得するとエラーになる
     * 本サンプルでは、Eager Fetchを指定している
     * 本来であれば、Sessionスコープを広く取り、Lazy Fetchも活用した方が良い
+* デフォルトの結合方法やデータ取得方法はモデル側でも定義できる
