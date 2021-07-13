@@ -16,5 +16,8 @@ class Engineer(Base):
     def __str__(self):
         return '[id={}, name={}, age={}]'.format(self.id, self.name, self.age)
 
+print(Engineer())
+
+
 
 
