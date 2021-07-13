@@ -1,0 +1,5 @@
+boto3==1.17.110
+sqlalchemy==1.4.20
+aurora-data-api==0.2.7
+sqlalchemy-aurora-data-api==0.2.7
+
