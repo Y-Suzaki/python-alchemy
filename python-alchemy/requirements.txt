@@ -5,4 +5,4 @@
 #    pip-compile --output-file requirements.txt requirements.in
 #
 mysqlclient==1.3.12
-sqlalchemy==1.2.7
+sqlalchemy==1.3.0
